@@ -18,7 +18,7 @@ ggplot theme
 Elegante theme (std)
 }
 \examples{
-library(ggplot2)
+library("ggplot2")
 
 ggplot(mtcars, aes(x = mpg*0.43, y = wt*0.4535924, colour = factor(cyl))) +
   geom_point(size = 2) +
@@ -29,7 +29,4 @@ ggplot(mtcars, aes(x = mpg*0.43, y = wt*0.4535924, colour = factor(cyl))) +
        colour = "Cylinders") +
   theme_elegante_std()
 
-}
-\seealso{
-\code{\link{theme_elegante}}
 }
