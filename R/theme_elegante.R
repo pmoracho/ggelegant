@@ -1,9 +1,12 @@
 #' Elegante theme (std)
 #'
-#' @param base_size Change the font base size. Default to 10
-#' @param base_family Change the font family. Defaults to standard font
+#' Es una configuración para gráficos ggplot2 que definiría como
+#' "minimalista y elegante.
 #'
-#' @return ggplot theme
+#' @param base_size El tamaño de letra base. (por defecto 10)
+#' @param base_family Tipo de letra. (por defecto, las letras default de ggplot2)
+#'
+#' @return un tema ggplot
 #'
 #' @examples
 #' library("ggplot2")
@@ -53,7 +56,7 @@ theme_elegante_std <- function(base_size = 10,
         # theme(panel.border= element_rect(fill = NA, colour = "grey70", size = rel(1)))+
         # Set title and axis labels, and format these and tick marks
         ggplot2::theme(plot.title=ggplot2::element_text(color=color.title,
-                                                        size=20,
+                                                        size=base_size+10,
                                                         vjust=1.25,
                                                         family=base_family,
                                                         hjust = 0.5,

@@ -7,15 +7,16 @@
 theme_elegante_std(base_size = 10, base_family = "")
 }
 \arguments{
-\item{base_size}{Change the font base size. Default to 10}
+\item{base_size}{El tamaño de letra base. (por defecto 10)}
 
-\item{base_family}{Change the font family. Defaults to standard font}
+\item{base_family}{Tipo de letra. (por defecto, las letras default de ggplot2)}
 }
 \value{
-ggplot theme
+un tema ggplot
 }
 \description{
-Elegante theme (std)
+Es una configuración para gráficos ggplot2 que definiría como
+"minimalista y elegante.
 }
 \examples{
 library("ggplot2")
