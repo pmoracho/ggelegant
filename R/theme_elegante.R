@@ -25,6 +25,8 @@ theme_elegante_std <- function(base_size = 10,
                                base_family = ""
                            )
     {
+    try_require("ggplot2")
+
     color.background = "#FFFFFF" # Chart Background
     color.grid.major = "#D9D9D9" # Chart Gridlines
     color.axis.text = "#666666" #
