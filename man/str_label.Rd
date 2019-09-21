@@ -2,7 +2,7 @@
 % Please edit documentation in R/str_label.R
 \name{str_label}
 \alias{str_label}
-\title{**str_label**}
+\title{Ajuste de una cadena}
 \usage{
 str_label(str, width = 5)
 }
@@ -16,8 +16,8 @@ La cadena ajustada con saltos de línea
 }
 \description{
 Agrega saltos de línea, a una cadena, en los espacios en blanco de ésta,
-para #' ajustar el un determinado ancho. Ideal para ajustar los
-__labels__ de las gráficas, cuando son muy largos, en más de una línea y
+para ajustar el un determinado ancho. Ideal para ajustar los
+labels de las gráficas, cuando son muy largos, en más de una línea y
 así ahorrar espacio.
 }
 \examples{
