@@ -29,8 +29,8 @@ theme_elegante_std <- function(base_size = 10,
 
     color.background = "#FFFFFF" # Chart Background
     color.grid.major = "#D9D9D9" # Chart Gridlines
-    color.axis.text = "#666666" #
-    color.axis.title = "#666666" #
+    color.axis.text = "#666666"
+    color.axis.title = "#666666"
     color.title = "#666666"
     color.subtitle = "#666666"
     strip.background.color = '#9999CC'
@@ -91,6 +91,11 @@ theme_elegante_std <- function(base_size = 10,
 
         # Plot margins
         ggplot2::theme(plot.margin = ggplot2::unit(c(.5, .5, .5, .5), "cm"))
+
+    ggplot2::update_geom_defaults("text",
+                                  list(colour = color.axis.text,
+                                       family = base_family)
+                                  )
 
     ret
 }
