@@ -5,6 +5,7 @@
 #'
 #' @param base_size El tamaño de letra base. (por defecto 10)
 #' @param base_family Tipo de letra. (por defecto, las letras default de ggplot2)
+#' @param color_background El color de fondo (por defecto, "#FFFFFF" el blanco)
 #'
 #' @return un tema ggplot
 #'
@@ -22,18 +23,19 @@
 #'
 #' @export
 theme_elegante_std <- function(base_size = 10,
-                               base_family = ""
+                               base_family = "",
+                               color_background = "#FFFFFF"
                            )
     {
     try_require("ggplot2")
 
-    color.background = "#FFFFFF" # Chart Background
+    color.background = color_background
     color.grid.major = "#D9D9D9" # Chart Gridlines
     color.axis.text = "#666666"
     color.axis.title = "#666666"
     color.title = "#666666"
     color.subtitle = "#666666"
-    strip.background.color = '#9999CC'
+    strip.background = '#67a9cf'
 
     ret <-
         ggplot2::theme_bw(base_size=base_size) +
@@ -52,11 +54,10 @@ theme_elegante_std <- function(base_size = 10,
         ggplot2::theme(legend.background = ggplot2::element_rect(fill=color.background)) +
         ggplot2::theme(legend.text = ggplot2::element_text(size=base_size-3,color=color.axis.title, family = base_family)) +
 
-        ggplot2::theme(strip.text.x = ggplot2::element_text(size=base_size,color=color.background, family = base_family)) +
-        ggplot2::theme(strip.text.y = ggplot2::element_text(size=base_size,color=color.background, family = base_family)) +
-        ggplot2::theme(strip.background = ggplot2::element_rect(fill = "grey70", colour = NA)) +
-        # theme(panel.border= element_rect(fill = NA, colour = "grey70", size = rel(1)))+
-        # Set title and axis labels, and format these and tick marks
+        ggplot2::theme(strip.text.x = ggplot2::element_text(size=base_size, color=color.title, family = base_family)) +
+        ggplot2::theme(strip.text.y = ggplot2::element_text(size=base_size ,color=color.title, family = base_family)) +
+        ggplot2::theme(strip.background = ggplot2::element_rect(fill = color.background , colour = color.title, linetype=3)) +
+
         ggplot2::theme(plot.title=ggplot2::element_text(color=color.title,
                                                         size=base_size+10,
                                                         vjust=1.25,

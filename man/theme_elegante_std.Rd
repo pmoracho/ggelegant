@@ -4,12 +4,18 @@
 \alias{theme_elegante_std}
 \title{Elegante theme (std)}
 \usage{
-theme_elegante_std(base_size = 10, base_family = "")
+theme_elegante_std(
+  base_size = 10,
+  base_family = "",
+  color_background = "#FFFFFF"
+)
 }
 \arguments{
 \item{base_size}{El tamaño de letra base. (por defecto 10)}
 
 \item{base_family}{Tipo de letra. (por defecto, las letras default de ggplot2)}
+
+\item{color_background}{El color de fondo (por defecto, "#FFFFFF" el blanco)}
 }
 \value{
 un tema ggplot
