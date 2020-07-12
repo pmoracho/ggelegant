@@ -67,7 +67,7 @@ theme_elegante_std <- function(base_size = 10,
                                                         )) +
 
         ggplot2::theme(plot.subtitle=ggplot2::element_text(color=color.subtitle, size=base_size+2, family = base_family,  hjust = 0.5,
-                                                           margin=margin(0, 0, .5, 0, "cm")))  +
+                                                           margin=ggplot2::margin(0, 0, .5, 0, "cm")))  +
 
         ggplot2::theme(axis.text.x=ggplot2::element_text(size=base_size,color=color.axis.text, family = base_family)) +
         ggplot2::theme(axis.text.y=ggplot2::element_text(size=base_size,color=color.axis.text, family = base_family)) +
@@ -76,7 +76,7 @@ theme_elegante_std <- function(base_size = 10,
         ggplot2::theme(axis.title.x=ggplot2::element_text(size=base_size+2,color=color.axis.title, vjust=0, family = base_family)) +
         ggplot2::theme(axis.title.y=ggplot2::element_text(size=base_size+2,color=color.axis.title, vjust=1.25, family = base_family)) +
         ggplot2::theme(plot.caption=ggplot2::element_text(size=base_size-2,color=color.axis.title, vjust=1.25, family = base_family,
-                                                          margin=margin(1, 0, -.1, 0, "cm"))) +
+                                                          margin=ggplot2::margin(1, 0, -.1, 0, "cm"))) +
 
         # Legend
         ggplot2::theme(legend.text=ggplot2::element_text(size=base_size,color=color.axis.text, family = base_family)) +
@@ -99,6 +99,53 @@ theme_elegante_std <- function(base_size = 10,
                                   list(colour = color.axis.text,
                                        family = base_family)
                                   )
+
+    ret
+}
+
+#' Elegante theme (clean)
+#'
+#' Es una configuración para gráficos ggplot2 que definiría como
+#' "minimalista y elegante. La opción "clean" no muestra los ejes x e y, y demás
+#' titulos de los ejes, ideal para gráficos como los de red.
+#'
+#' @param base_size El tamaño de letra base. (por defecto 10)
+#' @param base_family Tipo de letra. (por defecto, las letras default de ggplot2)
+#' @param color_background El color de fondo (por defecto, "#FFFFFF" el blanco)
+#'
+#' @return un tema ggplot
+#'
+#' @examples
+#' library("ggplot2")
+#'
+#' ggplot(mtcars, aes(x = mpg*0.43, y = wt*0.4535924, colour = factor(cyl))) +
+#'   geom_point(size = 2) +
+#'   labs(title = "Car weight vs efficiency",
+#'        subtitle = "Using sensible metrics",
+#'        x = "Efficiency (km/l)",
+#'        y = "Weight (1000 kg)",
+#'        colour = "Cylinders") +
+#'   theme_elegante_clean()
+#'
+#' @export
+theme_elegante_clean <- function(base_size = 10,
+                                 base_family = "",
+                                 color_background = "#FFFFFF") {
+
+    ret <- theme_elegante_std(base_size = base_size,
+                              base_family = base_family,
+                              color_background = color_background)
+    ret <- ret +
+        # Quitamos las grillas
+        ggplot2::theme(panel.grid.major=ggplot2::element_blank()) +
+        ggplot2::theme(panel.grid.minor=ggplot2::element_blank()) +
+        ggplot2::theme(axis.ticks=ggplot2::element_blank()) +
+        # la etiquetas del eje x
+        ggplot2::theme(axis.text.x=ggplot2::element_blank()) +
+        ggplot2::theme(axis.text.y=ggplot2::element_blank()) +
+        # Titulos de los ejes
+        ggplot2::theme(axis.title.x=ggplot2::element_blank()) +
+        ggplot2::theme(axis.title.y=ggplot2::element_blank())
 
     ret
 }
