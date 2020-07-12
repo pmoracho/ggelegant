@@ -54,8 +54,8 @@ theme_elegante_std <- function(base_size = 10,
         ggplot2::theme(legend.background = ggplot2::element_rect(fill=color.background)) +
         ggplot2::theme(legend.text = ggplot2::element_text(size=base_size-3,color=color.axis.title, family = base_family)) +
 
-        ggplot2::theme(strip.text.x = ggplot2::element_text(size=base_size, color=color.title, family = base_family)) +
-        ggplot2::theme(strip.text.y = ggplot2::element_text(size=base_size ,color=color.title, family = base_family)) +
+        ggplot2::theme(strip.text.x = ggplot2::element_text(size=base_size, color=color.title, family = base_family, face = "bold")) +
+        ggplot2::theme(strip.text.y = ggplot2::element_text(size=base_size ,color=color.title, family = base_family, face = "bold")) +
         ggplot2::theme(strip.background = ggplot2::element_rect(fill = color.background , colour = color.title, linetype=3)) +
 
         ggplot2::theme(plot.title=ggplot2::element_text(color=color.title,
@@ -66,7 +66,8 @@ theme_elegante_std <- function(base_size = 10,
                                                         face = "bold"
                                                         )) +
 
-        ggplot2::theme(plot.subtitle=ggplot2::element_text(color=color.subtitle, size=base_size+2, family = base_family,  hjust = 0.5))  +
+        ggplot2::theme(plot.subtitle=ggplot2::element_text(color=color.subtitle, size=base_size+2, family = base_family,  hjust = 0.5,
+                                                           margin=margin(0, 0, .5, 0, "cm")))  +
 
         ggplot2::theme(axis.text.x=ggplot2::element_text(size=base_size,color=color.axis.text, family = base_family)) +
         ggplot2::theme(axis.text.y=ggplot2::element_text(size=base_size,color=color.axis.text, family = base_family)) +
@@ -74,7 +75,8 @@ theme_elegante_std <- function(base_size = 10,
 
         ggplot2::theme(axis.title.x=ggplot2::element_text(size=base_size+2,color=color.axis.title, vjust=0, family = base_family)) +
         ggplot2::theme(axis.title.y=ggplot2::element_text(size=base_size+2,color=color.axis.title, vjust=1.25, family = base_family)) +
-        ggplot2::theme(plot.caption=ggplot2::element_text(size=base_size-2,color=color.axis.title, vjust=1.25, family = base_family)) +
+        ggplot2::theme(plot.caption=ggplot2::element_text(size=base_size-2,color=color.axis.title, vjust=1.25, family = base_family,
+                                                          margin=margin(1, 0, -.1, 0, "cm"))) +
 
         # Legend
         ggplot2::theme(legend.text=ggplot2::element_text(size=base_size,color=color.axis.text, family = base_family)) +
